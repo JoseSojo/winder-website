@@ -73,10 +73,10 @@ const ServicesSection: React.FC = () => {
                   </ul>
 
                   {/* CTA */}
-                  <button className="mt-6 text-primary font-medium hover:text-primary/80 transition-colors duration-200 group">
+                  {/* <button className="mt-6 text-primary font-medium hover:text-primary/80 transition-colors duration-200 group">
                     Saber más
                     <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200 inline-block">→</span>
-                  </button>
+                  </button> */}
                 </div>
               );
             })}
@@ -92,7 +92,7 @@ const ServicesSection: React.FC = () => {
                 Agenda una consulta inicial gratuita y juntos encontraremos el camino perfecto hacia tu bienestar
               </p>
               <button className="btn btn-primary text-white px-8">
-                Consulta Gratuita
+                Agendar consulta
               </button>
             </div>
           </div>

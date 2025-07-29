@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from './components/Header';
 import MobileNav from './components/MobileNav';
 import HeroSection from './components/HeroSection';

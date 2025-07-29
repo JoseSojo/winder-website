@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -20,9 +20,11 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
+    {
+      icon: Instagram,
+      href: 'https://www.instagram.com/nutridiet.ve?igsh=MTNteHl5eXJ1d2gxMg==',
+      label: 'Instagram'
+    }
   ];
 
   return (
@@ -34,10 +36,11 @@ const Footer: React.FC = () => {
             {/* Brand */}
             <div className="md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                <img src='/logo.png' alt="logo" className="w-16 h-16" />
+                {/* <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
                   <Heart className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-xl font-semibold">NutriDiet</span>
+                </div> */}
+                <span className="text-xl font-semibold">Winder González - <strong>NutriDiet</strong></span>
               </div>
               <p className="text-gray-300 mb-4 leading-relaxed max-w-md">
                 Nutriendo cuerpo y mente con propósito. Transformamos vidas a través de la alimentación consciente y personalizada.
@@ -110,7 +113,7 @@ const Footer: React.FC = () => {
           <div className="mt-8 pt-6 border-t border-gray-700">
             <div className="text-center">
               <p className="text-xs text-gray-400">
-                La información en este sitio web no constituye consejo médico. 
+                La información en este sitio web no constituye consejo médico.
                 Consulta siempre con un profesional de la salud antes de hacer cambios en tu dieta.
               </p>
             </div>

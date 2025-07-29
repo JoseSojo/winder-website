@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Mail, Phone, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Mail, Phone, Send, CheckCircle, Instagram } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -21,14 +21,14 @@ const ContactSection: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
     setFormData({ name: '', email: '', message: '' });
-    
+
     // Reset success message after 3 seconds
     setTimeout(() => setIsSubmitted(false), 3000);
   };
@@ -51,6 +51,13 @@ const ContactSection: React.FC = () => {
     }
   ];
 
+  const socialMedia = [
+    {
+      icon: Instagram,
+      link: 'https://www.instagram.com/nutridiet.ve?igsh=MTNteHl5eXJ1d2gxMg=='
+    }
+  ];
+
   return (
     <section id="contacto" className="py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -70,7 +77,7 @@ const ContactSection: React.FC = () => {
             <div className="animate-fade-in">
               <div className="bg-light p-8 rounded-2xl">
                 <h3 className="text-2xl font-semibold text-secondary mb-6">Envíame un mensaje</h3>
-                
+
                 {isSubmitted && (
                   <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-600" />
@@ -150,8 +157,21 @@ const ContactSection: React.FC = () => {
 
             {/* Contact Info */}
             <div className="animate-slide-up">
-              <h3 className="text-2xl font-semibold text-secondary mb-8">Información de contacto</h3>
-              
+              <h3 className="text-2xl font-semibold text-secondary mb-1">Información de contacto</h3>
+
+              <div className="mb-5">
+                {socialMedia.map((social, index) => {
+                  const Icon = social.icon;
+                  return (
+                    <a href={social.link} target="_blank" rel="noreferrer" key={index} className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg text-primary hover:bg-primary/80 hover:text-white duration-200 flex items-center justify-center flex-shrink-0"> 
+                        <Icon className="w-6 h-6" />
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+
               <div className="space-y-8">
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
@@ -162,7 +182,7 @@ const ContactSection: React.FC = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-secondary mb-2">{info.title}</h4>
-                        {info.details.map((detail, detailIndex) => (
+                        {info.details && info.details.map((detail, detailIndex) => (
                           <p key={detailIndex} className="text-tertiary">
                             {detail}
                           </p>

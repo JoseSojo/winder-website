@@ -98,14 +98,14 @@ const TestimonialsSection: React.FC = () => {
             {/* Navigation Arrows */}
             <button
               onClick={goToPrevious}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-200"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full shadow-lg flex items-center justify-center bg-primary hover:text-white transition-all duration-200"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             
             <button
               onClick={goToNext}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-200"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full shadow-lg flex items-center justify-center bg-primary hover:text-white transition-all duration-200"
             >
               <ChevronRight className="w-6 h-6" />
             </button>

@@ -35,7 +35,7 @@ const AboutSection: React.FC = () => {
               Sobre <span className="text-primary">Mí</span>
             </h2>
             <p className="text-lg text-tertiary max-w-2xl mx-auto">
-              Nutricionista especializada en transformar vidas a través de la alimentación consciente
+              Nutricionista especializado en transformar vidas a través de la alimentación consciente
             </p>
           </div>
 
@@ -43,12 +43,9 @@ const AboutSection: React.FC = () => {
             {/* Image */}
             <div className="animate-fade-in">
               <div className="relative">
-                <div className="w-full h-96 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl flex items-center justify-center">
+                <div className="w-full py-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Heart className="w-16 h-16 text-primary" />
-                    </div>
-                    <p className="text-tertiary">Foto de Winder</p>
+                    <img src='/photo.jpg' alt="Foto de Winder" className="w-full h-72 object-cover rounded flex items-center justify-center mx-auto mb-4" />
                   </div>
                 </div>
                 {/* Decorative element */}
@@ -63,7 +60,7 @@ const AboutSection: React.FC = () => {
                 Transformando vidas a través de la nutrición
               </h3>
               <p className="text-tertiary mb-6 leading-relaxed">
-                Soy una nutricionista apasionada por ayudar a las personas a desarrollar una 
+                Soy un nutricionista apasionada por ayudar a las personas a desarrollar una 
                 relación saludable y consciente con la alimentación. Con más de 5 años de 
                 experiencia, me especializo en crear planes nutricionales personalizados que 
                 no solo mejoran la salud física, sino también el bienestar mental y emocional.
@@ -73,9 +70,10 @@ const AboutSection: React.FC = () => {
                 respeto por la individualidad de cada persona. Creo firmemente que una 
                 alimentación consciente es la clave para una vida plena y saludable.
               </p>
+            </div>
 
-              {/* Values Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+             {/* Values Grid */}
+              <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 {values.map((value, index) => {
                   const Icon = value.icon;
                   return (
@@ -94,7 +92,6 @@ const AboutSection: React.FC = () => {
                   );
                 })}
               </div>
-            </div>
           </div>
         </div>
       </div>

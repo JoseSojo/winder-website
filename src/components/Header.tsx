@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Heart } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [activeSection, setActiveSection] = useState('inicio');
@@ -17,7 +16,7 @@ const Header: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       // Update active section based on scroll position
       const sections = navLinks.map(link => link.href.substring(1));
       const currentSection = sections.find(section => {
@@ -28,7 +27,7 @@ const Header: React.FC = () => {
         }
         return false;
       });
-      
+
       if (currentSection) {
         setActiveSection(currentSection);
       }
@@ -46,18 +45,15 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 hidden md:block ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
-      }`}
+    <header
+      className={`fixed top-0 w-full z-50 transition-all duration-300 hidden md:block ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-              <Heart className="w-6 h-6 text-white" />
-            </div>
+            <img src='/logo.png' alt="logo" className="w-10 h-10" />
             <span className="text-xl font-semibold text-secondary">NutriDiet</span>
           </div>
 
@@ -67,18 +63,17 @@ const Header: React.FC = () => {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${
-                  activeSection === link.href.substring(1)
-                    ? 'text-primary'
-                    : 'text-tertiary'
-                }`}
+                className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${activeSection === link.href.substring(1)
+                  ? 'text-primary'
+                  : 'text-tertiary'
+                  }`}
               >
                 {link.label}
               </button>
             ))}
-            
+
             {/* CTA Button */}
-            <button 
+            <button
               onClick={() => scrollToSection('#contacto')}
               className="btn btn-primary btn-sm text-white font-medium px-6 hover:bg-primary/90 transition-all duration-200"
             >
